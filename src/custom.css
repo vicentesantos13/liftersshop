@@ -1,0 +1,15 @@
+.header-custom{
+    background-color: #0d0d0d;
+    border-bottom: 2px solid #575757;
+  }
+
+.input-custom{
+    background-color: #0d0d0d;
+    color:#FFFFFF;
+    border: 0;
+    outline: none;
+}
+
+.hero-banner-custom{
+    background-color: #0d0d0d;
+}
