@@ -1,8 +1,16 @@
 import { Search, ShoppingBag } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useShop } from "../../context/context";
 
 const Header: React.FC = () => {
+    const {setShowCart,showCart, cartProducts} = useShop();
+    const [countCart,setCountCart] = useState<number>(0)
+    
+    useEffect(() => {
+        setCountCart(cartProducts.length)
+    }, [cartProducts]);
+    
     return (
         <nav className="navbar navbar-expand-lg navbar-dark header-custom ">
             <div className="container">
@@ -33,9 +41,9 @@ const Header: React.FC = () => {
                     <input type="text" className="input-custom ms-2" placeholder="Search"/>
                 </div>
                 <div className="d-flex">
-                    <div className="text-white d-flex mt-1">
+                    <div className="text-white d-flex mt-1" onClick={()=>setShowCart(!showCart)}>
                         <ShoppingBag />
-                        <div className="ms-1">3</div>
+                        <div className="ms-1">{countCart !==0 && <div>{countCart}</div>}</div>
                     </div>
                     <a href="/" className="nav-link text-white ms-4 mt-1">Login</a>
                 </div>

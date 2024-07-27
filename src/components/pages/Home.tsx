@@ -26,9 +26,7 @@ const Home: React.FC = () => {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        console.log("Products updated:", products);
-    }, [products]);
+    
     return (
         <Layout>
             <div className="hero-banner-custom">
