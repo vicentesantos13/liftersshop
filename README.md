@@ -1,47 +1,87 @@
-# Getting Started with Create React App
+# Projeto de E-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma aplicação de e-commerce desenvolvida utilizando React, TypeScript, e várias bibliotecas para gerenciar formulários, rotas, validação e ícones. A aplicação permite a navegação de produtos, pesquisa, filtragem e compra.
 
-## Available Scripts
+## Bibliotecas Utilizadas
 
-In the project directory, you can run:
+- **React**: Biblioteca principal para construção da interface de usuário.
+- **TypeScript**: Superconjunto de JavaScript que adiciona tipagem estática ao código.
+- **react-hook-form**: Biblioteca para gerenciar formulários de maneira simples e performática.
+- **zod**: Biblioteca para validação e criação de esquemas de dados.
+- **react-router-dom**: Biblioteca para gerenciamento de rotas na aplicação React.
+- **lucide-react**: Biblioteca de ícones para React.
+- **Bootstrap**: Framework CSS para desenvolvimento responsivo e estilização rápida.
 
-### `npm start`
+## Como Executar o Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Siga os passos abaixo para clonar o repositório e executar o projeto localmente:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone o repositório:
 
-### `npm test`
+   ```sh
+   git clone https://github.com/vicentesantos13/liftersshop
+   ```
+2. Navegue até o diretório do projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```sh
+   cd seu-repositorio
+   ```
+3. Instale as dependências:
 
-### `npm run build`
+   ```sh
+   npm install
+   ```
+4. Execute o projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```sh
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O projeto estará disponível em `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Arquitetura de Pastas
 
-### `npm run eject`
+A estrutura de pastas do projeto é organizada da seguinte forma:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+src/
+├── components/
+│   ├── home/
+│   │   └── Filters.tsx          # Componente de filtros
+│   ├── layout/
+│   │   ├── Header.tsx           # Componente de cabeçalho
+│   │   └── Layout.tsx           # Componente de layout principal
+│   └── cart.tsx                 # Componente de carrinho
+├── context/
+│   └── context.tsx              # Contexto global da aplicação
+├── pages/
+│   ├── Checkout.tsx             # Página de checkout
+│   ├── Home.tsx                 # Página inicial
+│   └── ProductDetails.tsx       # Página de detalhes do produto
+├── schemas/
+│   └── creditCardSchema.ts      # Esquema de validação de cartão de crédito
+├── services/
+│   └── fetchProducts.ts         # Função para buscar produtos
+├── types/
+│   ├── cartProducts.ts          # Tipos e interfaces TypeScript para produtos no carrinho
+│   └── products.ts              # Tipos e interfaces TypeScript para produtos
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Descrição das Pastas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# liftersshop
+- **components**: Contém componentes reutilizáveis organizados por funcionalidade.
+  - **home**: Contém componentes específicos da página inicial, como filtros.
+  - **layout**: Contém componentes de layout, como cabeçalho e layout principal.
+  - **cart.tsx**: Componente do carrinho de compras.
+- **context**: Contém o contexto global da aplicação.
+- **pages**: Contém componentes de páginas da aplicação.
+  - **Checkout.tsx**: Página de checkout.
+  - **Home.tsx**: Página inicial.
+  - **ProductDetails.tsx**: Página de detalhes do produto.
+- **schemas**: Contém esquemas de validação.
+  - **creditCardSchema.ts**: Esquema de validação de cartão de crédito.
+- **services**: Contém funções de serviços e chamadas de API.
+  - **fetchProducts.ts**: Função para buscar produtos.
+- **types**: Contém definições de tipos TypeScript utilizados no projeto.
+  - **cartProducts.ts**: Tipos e interfaces para produtos no carrinho.
+  - **products.ts**: Tipos e interfaces para produtos.

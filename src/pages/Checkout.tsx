@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../layout/Layout";
+import Layout from "../components/layout/Layout";
 import { Link, useNavigate } from "react-router-dom";
 import { Lock, ShoppingBag, Trash } from "lucide-react";
-import { useShop } from "../../context/context";
+import { useShop } from "../context/context";
 import { useForm } from "react-hook-form";
-import { creditCardSchema } from "../../schemas/creditCardSchema";
+import { creditCardSchema } from "../schemas/creditCardSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-const NewPage: React.FC = () => {
+const Checkout: React.FC = () => {
     const navigate = useNavigate();
     const { cartProducts, setCartProducts } = useShop();
 
@@ -315,4 +315,4 @@ const NewPage: React.FC = () => {
     );
 };
 
-export default NewPage;
+export default Checkout;

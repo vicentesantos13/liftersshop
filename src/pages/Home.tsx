@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../layout/Layout";
-import { fetchProducts } from "../../services/fetchProducts";
-import { Product } from "../../types/products";
-import { Filters } from "../home/filters";
-import { useShop } from "../../context/context";
+import Layout from "../components/layout/Layout";
+import { fetchProducts } from "../services/fetchProducts";
+import { Product } from "../types/products";
+import { Filters } from "../components/home/filters";
+import { useShop } from "../context/context";
 
 interface ProductWithIndex extends Product {
     originalIndex: number;

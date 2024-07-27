@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../layout/Layout";
+import Layout from "../components/layout/Layout";
 import { useParams } from "react-router-dom";
-import { fetchProducts } from "../../services/fetchProducts";
-import { Product } from "../../types/products";
+import { fetchProducts } from "../services/fetchProducts";
+import { Product } from "../types/products";
 import { ShoppingBag } from "lucide-react";
-import { useShop } from "../../context/context";
-import { CartProduct } from "../../types/cartProduct";
+import { useShop } from "../context/context";
+import { CartProduct } from "../types/cartProduct";
 import { Link } from "react-router-dom";
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams();
     const [product, setProduct] = useState<Product>();
-    const {cartProducts,setCartProducts} = useShop();
+    const {setCartProducts} = useShop();
 
     const [color, setColor] = useState("");
     const [size, setSize] = useState("");
@@ -27,7 +27,7 @@ const ProductDetail: React.FC = () => {
             }
         };
         fetchData();
-    }, []);
+    }, [id]);
 
     const handleAddToCart = () => {
         if (!color || !size) {

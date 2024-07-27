@@ -66,6 +66,7 @@ export const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
                             id={cat}
                             name={cat}
                             onChange={handleCategoryChange}
+                            checked={categories.includes(cat)}
                         />
                         <label htmlFor={cat} className="ms-2">
                             {cat.charAt(0).toUpperCase() +
