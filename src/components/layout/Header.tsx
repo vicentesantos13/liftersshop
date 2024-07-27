@@ -1,16 +1,24 @@
 import { Search, ShoppingBag } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useShop } from "../../context/context";
 
 const Header: React.FC = () => {
-    const {setShowCart,showCart, cartProducts} = useShop();
-    const [countCart,setCountCart] = useState<number>(0)
-    
+    const { setShowCart, showCart, cartProducts, setSearchQuery } = useShop();
+    const [countCart, setCountCart] = useState<number>(0);
+
     useEffect(() => {
-        setCountCart(cartProducts.length)
+        setCountCart(cartProducts.length);
     }, [cartProducts]);
-    
+
+    const location = useLocation();
+
+    const isHomePage = location.pathname === "/";
+
+    const handleSearch = (query: string) => {
+        setSearchQuery(query);
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark header-custom ">
             <div className="container">
@@ -37,15 +45,28 @@ const Header: React.FC = () => {
                     </ul>
                 </div>
                 <div className="text-white ms-4 navbar-collapse">
-                    <Search className="text-white"/>
-                    <input type="text" className="input-custom ms-2" placeholder="Search"/>
+                    <Search className="text-white" />
+                    <input
+                        type="text"
+                        className="input-custom ms-2"
+                        placeholder="Search"
+                        disabled={!isHomePage}
+                        onChange={(e) => handleSearch(e.target.value)}
+                    />
                 </div>
                 <div className="d-flex">
-                    <div className="text-white d-flex mt-1" onClick={()=>setShowCart(!showCart)}>
+                    <div
+                        className="text-white d-flex mt-1"
+                        onClick={() => setShowCart(!showCart)}
+                    >
                         <ShoppingBag />
-                        <div className="ms-1">{countCart !==0 && <div>{countCart}</div>}</div>
+                        <div className="ms-1">
+                            {countCart !== 0 && <div>{countCart}</div>}
+                        </div>
                     </div>
-                    <a href="/" className="nav-link text-white ms-4 mt-1">Login</a>
+                    <a href="/" className="nav-link text-white ms-4 mt-1">
+                        Login
+                    </a>
                 </div>
             </div>
         </nav>

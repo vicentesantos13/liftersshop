@@ -32,31 +32,31 @@
     border: 1px solid #000000
 }
 
-.bg-color-orange{
+.bg-color-laranja{
     background-color: #e6905e;
 }
-.bg-color-purple{
+.bg-color-roxo{
     background-color: #7b61ff;
 }
-.bg-color-dark-green{
+.bg-color-verde-escuro{
     background-color: #1f9653;
 }
-.bg-color-blue{
+.bg-color-azul{
     background-color: #2a82f0;
 }
-.bg-color-red{
+.bg-color-vermelho{
     background-color: #ed5653;
 }
-.bg-color-light-blue{
+.bg-color-azul-bebe{
     background-color: #56ccf1;
 }
-.bg-color-black{
+.bg-color-preto{
     background-color: #4f4f4f;
 }
-.bg-color-pink{
+.bg-color-rosa{
     background-color: #b96ad8;
 }
-.bg-color-green{
+.bg-color-verde{
     background-color: #70cf98;
 }
 .grid-colors{
