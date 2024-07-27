@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useShop } from "../context/context";
 import { Trash } from "lucide-react";
 
@@ -77,9 +78,9 @@ export const Cart = () => {
                             <div>Total:</div>
                             <div>${calculateTotal().toFixed(2)}</div>
                         </div>
-                        <div className="bg-white w-100 py-2 d-flex justify-content-center cursor-pointer">
+                        <Link to={"/checkout"} className="bg-white w-100 py-2 d-flex justify-content-center cursor-pointer text-decoration-none text-black" onClick={()=>setShowCart(false)}>
                             Checkout
-                        </div>
+                        </Link>
                     </div>
                 </div>
             )}

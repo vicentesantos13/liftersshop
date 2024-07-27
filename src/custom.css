@@ -136,3 +136,15 @@
     position: relative;
 
 }
+
+.checkout-container{
+    width: 40%;
+    background-color: #0d0d0d;
+}
+
+.bg-input{
+    background-color: #313131;
+}
+.border-error{
+    border: 1px solid red;
+}
